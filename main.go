@@ -18,16 +18,14 @@ func main() {
 func FilterUniqueWords(words []string) []string {
 	uniqueWords := []string{}
 
+	m := make(map[string]bool)
+
 	for _, word := range words {
-		existed := false
-		for _, uniqueWord := range uniqueWords {
-			if uniqueWord == word {
-				existed = true
-			}
+		if m[word] {
+			continue
 		}
-		if !existed {
-			uniqueWords = append(uniqueWords, word)
-		}
+		uniqueWords = append(uniqueWords, word)
+		m[word] = true
 	}
 
 	return uniqueWords
