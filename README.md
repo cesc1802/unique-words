@@ -20,3 +20,9 @@ Result:
 ```
 [abc def hi hello there]
 ```
+
+## How to run test
+
+```
+go test ./...
+```
